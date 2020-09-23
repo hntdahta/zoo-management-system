@@ -92,8 +92,7 @@ namespace zoo_management_system
                         }
                         break;
                     case 6:
-                        Console.WriteLine("Exit");
-                        break;
+                        return;
                 }
             } while (choice != 7);
         }
