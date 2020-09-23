@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,6 +9,11 @@ namespace zoo_management_system
         public int CageNumber { get; set; }
         public List<Animal> AnimalList { get; set; }
 
+        public void Input()
+        {
+            Console.WriteLine("Nhap ma chuong");
+            CageNumber = int.Parse(Console.ReadLine());
+        }
         public Cage()
         {
             AnimalList = new List<Animal>();
