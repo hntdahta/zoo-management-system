@@ -17,7 +17,7 @@ namespace zoo_management_system
                 switch (choice)
                 {
                     case 1:
-                        Console.WriteLine("Nhap so luong chuong :");
+                        Console.WriteLine("Nhap chuong :");
                         int n = int.Parse(Console.ReadLine());
                         for (int i = 0; i < n; i++)
                         {
@@ -27,25 +27,25 @@ namespace zoo_management_system
                         }
                         break;
                     case 2:
-                        Console.WriteLine("Nhap ma chuong muon xoa");
+                        Console.WriteLine("Nhap ma chuong can xoa");
                         int maChuong = int.Parse(Console.ReadLine());
                         zoo.RemoveCage(maChuong);
                         break;
                     case 3:
                         for (int i = 0; i < zoo.CageList.Count; i++)
                         {
-                            Console.WriteLine("Nhap so luong thu cho chuong co ma {0}", zoo.CageList[i].CageNumber);
+                            Console.WriteLine("Nhap so luong con vat cho chuong co ma {0}", zoo.CageList[i].CageNumber);
                             int soVat = int.Parse(Console.ReadLine());
                             for (int j = 0; j < soVat; j++)
                             {
                                 Console.WriteLine("Nhap loai thu \n1. Tiger\n2. Dog \n3. Cat");
                                 int animalType = int.Parse(Console.ReadLine());
                                 Animal newAnimal;
-                                Console.WriteLine("Nhap vao ten con thu");
+                                Console.WriteLine("Nhap ten con vat");
                                 string ten = Console.ReadLine();
-                                Console.WriteLine("Nhap vao tuoi con thu");
+                                Console.WriteLine("Nhap tuoi con vat");
                                 int tuoi = int.Parse(Console.ReadLine());
-                                Console.WriteLine("Nhap vao mo ta");
+                                Console.WriteLine("Nhap mo ta");
                                 string moTa = Console.ReadLine();
                                 switch (animalType)
                                 {
@@ -73,7 +73,7 @@ namespace zoo_management_system
                         {
                             if (c.CageNumber == MaChuong)
                             {
-                                Console.WriteLine("Nhap vao ten con thu vat");
+                                Console.WriteLine("Nhap vao ten con vat");
                                 string tenVat = Console.ReadLine();
                                 c.RemoveAnimal(tenVat);
                                 break;
@@ -83,7 +83,7 @@ namespace zoo_management_system
                     case 5:
                         foreach (Cage c in zoo.CageList)
                         {
-                            Console.WriteLine("Danh sach con vat cho chuong co ma chuong {0}", c.CageNumber);
+                            Console.WriteLine("Danh sach con vat o chuong co ma chuong {0}", c.CageNumber);
                             foreach (Animal anm in c.AnimalList)
                             {
                                 anm.Speak();
